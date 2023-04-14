@@ -36,7 +36,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define RF_FREQUENCY                                868100000 // Hz
+#define RF_FREQUENCY                                869525000 // Hz
 
 #define TX_OUTPUT_POWER                             2         // dBm
 
@@ -44,14 +44,15 @@
                                                               //  1: 250 kHz,
                                                               //  2: 500 kHz,
                                                               //  3: Reserved]
-#define LORA_SPREADING_FACTOR                       12         // [SF7..SF12]
+#define LORA_SPREADING_FACTOR                       9         // [SF7..SF12]
 #define LORA_CODINGRATE                             1         // [1: 4/5,
                                                               //  2: 4/6,
                                                               //  3: 4/7,
                                                               //  4: 4/8]
 #define LORA_PREAMBLE_LENGTH                        8         // Same for Tx and Rx
 #define LORA_SYMBOL_TIMEOUT                         5         // Symbols
-#define LORA_FIX_LENGTH_PAYLOAD_ON                  false
+#define LORA_FIX_LENGTH_PAYLOAD_ON                  true
+#define LORA_FIX_LENGTH_PAYLOAD						17
 #define LORA_IQ_INVERSION_ON                        false
 
 /* USER CODE END PD */
@@ -160,7 +161,7 @@ int main(void)
     SX1276SetRxConfig( LORA_BANDWIDTH, LORA_SPREADING_FACTOR,
                                    LORA_CODINGRATE, 0, LORA_PREAMBLE_LENGTH,
                                    LORA_SYMBOL_TIMEOUT, LORA_FIX_LENGTH_PAYLOAD_ON,
-                                   0, true, LORA_IQ_INVERSION_ON, true );
+								   LORA_FIX_LENGTH_PAYLOAD, true, LORA_IQ_INVERSION_ON, true );
 
     SX1276SetRx();
 
