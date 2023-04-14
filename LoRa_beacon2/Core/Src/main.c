@@ -161,7 +161,7 @@ int main(void)
     SX1276SetRxConfig( LORA_BANDWIDTH, LORA_SPREADING_FACTOR,
                                    LORA_CODINGRATE, 0, LORA_PREAMBLE_LENGTH,
                                    LORA_SYMBOL_TIMEOUT, LORA_FIX_LENGTH_PAYLOAD_ON,
-								   LORA_FIX_LENGTH_PAYLOAD, true, LORA_IQ_INVERSION_ON, true );
+								   LORA_FIX_LENGTH_PAYLOAD, false, LORA_IQ_INVERSION_ON, true );
 
     SX1276SetRx();
 
